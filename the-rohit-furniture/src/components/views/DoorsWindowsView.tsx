@@ -33,12 +33,12 @@ export const DoorsWindowsView: React.FC<DoorsWindowsViewProps> = ({ products, on
   );
 
   return (
-    <div className="py-10 sm:py-16 bg-[#FDFBF7]">
+    <div className="py-10 sm:py-16 bg-[#F5EDE4]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Banner Section */}
-        <div className="bg-[#241A13] text-white rounded-3xl p-6 sm:p-10 lg:p-12 relative overflow-hidden text-left">
+        <div className="bg-[#1F1209] text-white rounded-3xl p-6 sm:p-10 lg:p-12 relative overflow-hidden text-left border border-[#422A14] shadow-md">
           <div className="relative z-10 max-w-2xl space-y-4">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#A35824] text-white text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#7D4A27] text-white text-xs font-bold uppercase tracking-wider">
               <DoorOpen className="w-3.5 h-3.5" />
               <span>{language === 'hi' ? "ठोस इमारती लकड़ी" : "Solid Timber Woodwork"}</span>
             </div>
@@ -49,7 +49,7 @@ export const DoorsWindowsView: React.FC<DoorsWindowsViewProps> = ({ products, on
                 : "Solid Teak & Sheesham Handcrafted Doors & Windows"}
             </h1>
 
-            <p className="text-stone-300 text-sm sm:text-base leading-relaxed">
+            <p className="text-[#D4B896] text-sm sm:text-base leading-relaxed">
               {language === 'hi'
                 ? "मकान के मुख्य द्वार से लेकर कमरों के पल्लों और भारी चौखटों तक। धूप-बारिश सहने वाली पक्की लकड़ी, हाथ की पारंपरिक नक्काशी और आपके नाप के अनुसार निर्माण।"
                 : "Heavy entrance doors, hand-carved panels, seasoned chaukhat frames, and glazed wooden window leaves built to withstand weather, sun, and decades of use in Haryana."}
@@ -68,14 +68,14 @@ export const DoorsWindowsView: React.FC<DoorsWindowsViewProps> = ({ products, on
         </div>
 
         {/* Filter Pills */}
-        <div className="flex items-center justify-between flex-wrap gap-4 border-b border-stone-200 pb-4 text-left">
+        <div className="flex items-center justify-between flex-wrap gap-4 border-b border-[#D4B896] pb-4 text-left">
           <div className="flex items-center gap-2">
             <button
               onClick={() => setFilterType('all')}
               className={`px-4 py-2 text-xs sm:text-sm font-bold rounded-lg transition-colors ${
                 filterType === 'all'
-                  ? 'bg-[#8B4513] text-white shadow-xs'
-                  : 'bg-stone-100 hover:bg-stone-200 text-stone-700'
+                  ? 'bg-[#7D4A27] text-white shadow-xs border border-[#6E3F20]'
+                  : 'bg-[#FAF6F0] hover:bg-[#EBD9C8] text-[#422A14] border border-[#D4B896]'
               }`}
             >
               {language === 'hi' ? "सभी (दरवाजे व खिड़कियाँ)" : "All Doors & Windows"}
@@ -84,8 +84,8 @@ export const DoorsWindowsView: React.FC<DoorsWindowsViewProps> = ({ products, on
               onClick={() => setFilterType('doors')}
               className={`px-4 py-2 text-xs sm:text-sm font-bold rounded-lg transition-colors ${
                 filterType === 'doors'
-                  ? 'bg-[#8B4513] text-white shadow-xs'
-                  : 'bg-stone-100 hover:bg-stone-200 text-stone-700'
+                  ? 'bg-[#7D4A27] text-white shadow-xs border border-[#6E3F20]'
+                  : 'bg-[#FAF6F0] hover:bg-[#EBD9C8] text-[#422A14] border border-[#D4B896]'
               }`}
             >
               {language === 'hi' ? "केवल दरवाजे (Doors)" : "Wooden Doors Only"}
@@ -94,15 +94,15 @@ export const DoorsWindowsView: React.FC<DoorsWindowsViewProps> = ({ products, on
               onClick={() => setFilterType('windows')}
               className={`px-4 py-2 text-xs sm:text-sm font-bold rounded-lg transition-colors ${
                 filterType === 'windows'
-                  ? 'bg-[#8B4513] text-white shadow-xs'
-                  : 'bg-stone-100 hover:bg-stone-200 text-stone-700'
+                  ? 'bg-[#7D4A27] text-white shadow-xs border border-[#6E3F20]'
+                  : 'bg-[#FAF6F0] hover:bg-[#EBD9C8] text-[#422A14] border border-[#D4B896]'
               }`}
             >
               {language === 'hi' ? "केवल खिड़कियाँ (Windows)" : "Wooden Windows Only"}
             </button>
           </div>
 
-          <span className="text-xs text-stone-500 font-medium">
+          <span className="text-xs text-[#5E3D22] font-medium">
             {displayedProducts.length} {language === 'hi' ? "डिज़ाइन उपलब्ध" : "designs shown"}
           </span>
         </div>

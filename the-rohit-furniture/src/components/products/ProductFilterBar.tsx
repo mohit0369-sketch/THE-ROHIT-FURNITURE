@@ -56,11 +56,11 @@ export const ProductFilterBar: React.FC<ProductFilterBarProps> = ({
   ];
 
   return (
-    <div className="bg-white rounded-xl border border-stone-200 p-4 sm:p-5 shadow-xs space-y-4">
+    <div className="bg-[#FAF6F0] rounded-xl border border-[#D4B896] p-4 sm:p-5 shadow-xs space-y-4">
       {/* Search Input & Reset Button */}
       <div className="flex flex-col sm:flex-row gap-3">
         <div className="relative flex-1">
-          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400" />
+          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#9A7350]" />
           <input
             type="text"
             value={searchQuery}
@@ -70,12 +70,12 @@ export const ProductFilterBar: React.FC<ProductFilterBarProps> = ({
                 ? "उत्पाद, लकड़ी (शीशम, सागवान) या श्रेणी खोजें..." 
                 : "Search furniture, wood (Sheesham, Teak), or kitchen..."
             }
-            className="w-full pl-10 pr-4 py-2.5 text-sm bg-stone-50 border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8B4513]/20 focus:border-[#8B4513]"
+            className="w-full pl-10 pr-4 py-2.5 text-sm bg-[#F5EDE4] border border-[#D4B896] text-[#2C1A0B] placeholder:text-[#9A7350] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#A0673C]/20 focus:border-[#7D4A27]"
           />
           {searchQuery && (
             <button
               onClick={() => onSearchChange('')}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-600"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-[#7A5536] hover:text-[#2C1A0B]"
             >
               <X className="w-4 h-4" />
             </button>
@@ -85,7 +85,7 @@ export const ProductFilterBar: React.FC<ProductFilterBarProps> = ({
         {hasActiveFilters && (
           <button
             onClick={onClearFilters}
-            className="inline-flex items-center justify-center gap-1.5 px-3 py-2 text-xs font-semibold text-stone-600 hover:text-stone-900 bg-stone-100 hover:bg-stone-200 rounded-lg transition-colors"
+            className="inline-flex items-center justify-center gap-1.5 px-3 py-2 text-xs font-semibold text-[#422A14] hover:text-[#2C1A0B] bg-[#EBD9C8]/70 hover:bg-[#D4B896]/60 border border-[#D4B896] rounded-lg transition-colors"
           >
             <X className="w-3.5 h-3.5" />
             <span>{language === 'hi' ? "फ़िल्टर हटाएं" : "Clear Filters"}</span>
@@ -95,8 +95,8 @@ export const ProductFilterBar: React.FC<ProductFilterBarProps> = ({
 
       {/* Category Pills */}
       <div>
-        <div className="flex items-center gap-1.5 text-xs font-bold text-stone-700 uppercase tracking-wider mb-2">
-          <SlidersHorizontal className="w-3.5 h-3.5 text-[#8B4513]" />
+        <div className="flex items-center gap-1.5 text-xs font-bold text-[#7A5536] uppercase tracking-wider mb-2">
+          <SlidersHorizontal className="w-3.5 h-3.5 text-[#7D4A27]" />
           <span>{language === 'hi' ? "मुख्य श्रेणी:" : "Main Category:"}</span>
         </div>
         <div className="flex flex-wrap gap-1.5">
@@ -111,8 +111,8 @@ export const ProductFilterBar: React.FC<ProductFilterBarProps> = ({
               }}
               className={`px-3 py-1.5 text-xs sm:text-sm font-semibold rounded-lg transition-colors ${
                 selectedCategory === cat.id
-                  ? 'bg-[#8B4513] text-white shadow-xs'
-                  : 'bg-stone-100 hover:bg-stone-200 text-stone-750'
+                  ? 'bg-[#7D4A27] text-white shadow-xs border border-[#6E3F20]'
+                  : 'bg-[#EBD9C8]/70 hover:bg-[#D4B896]/60 text-[#422A14] border border-[#D4B896]'
               }`}
             >
               {language === 'hi' ? cat.hi : cat.en}
@@ -123,8 +123,8 @@ export const ProductFilterBar: React.FC<ProductFilterBarProps> = ({
 
       {/* Subcategory Pills (Only visible when Furniture or All is active) */}
       {(selectedCategory === 'furniture' || selectedCategory === 'all') && (
-        <div className="pt-2 border-t border-stone-100">
-          <span className="block text-[11px] font-bold text-stone-700 uppercase tracking-wider mb-2">
+        <div className="pt-2 border-t border-[#D4B896]/50">
+          <span className="block text-[11px] font-bold text-[#7A5536] uppercase tracking-wider mb-2">
             {language === 'hi' ? "फर्नीचर प्रकार:" : "Furniture Type:"}
           </span>
           <div className="flex flex-wrap gap-1.5">
@@ -134,8 +134,8 @@ export const ProductFilterBar: React.FC<ProductFilterBarProps> = ({
                 onClick={() => onSelectSubcategory(sub.id)}
                 className={`px-2.5 py-1 text-xs font-medium rounded-md transition-colors ${
                   selectedSubcategory === sub.id
-                    ? 'bg-amber-100 text-amber-900 font-bold border border-amber-300'
-                    : 'bg-stone-50 hover:bg-stone-100 text-stone-600 border border-stone-200'
+                    ? 'bg-[#7D4A27] text-white font-bold border border-[#6E3F20] shadow-xs'
+                    : 'bg-[#FAF6F0] hover:bg-[#EBD9C8] text-[#5E3D22] border border-[#D4B896]'
                 }`}
               >
                 {language === 'hi' ? sub.hi : sub.en}
@@ -146,8 +146,8 @@ export const ProductFilterBar: React.FC<ProductFilterBarProps> = ({
       )}
 
       {/* Status Pills */}
-      <div className="pt-2 border-t border-stone-100">
-        <span className="block text-[11px] font-bold text-stone-700 uppercase tracking-wider mb-2">
+      <div className="pt-2 border-t border-[#D4B896]/50">
+        <span className="block text-[11px] font-bold text-[#7A5536] uppercase tracking-wider mb-2">
           {language === 'hi' ? "उपलब्धता स्थिति:" : "Availability Status:"}
         </span>
         <div className="flex flex-wrap gap-1.5">
@@ -157,8 +157,8 @@ export const ProductFilterBar: React.FC<ProductFilterBarProps> = ({
               onClick={() => onSelectStatus(st.id)}
               className={`px-2.5 py-1 text-xs font-medium rounded-md transition-colors ${
                 selectedStatus === st.id
-                  ? 'bg-stone-900 text-white font-bold'
-                  : 'bg-stone-50 hover:bg-stone-100 text-stone-600 border border-stone-200'
+                  ? 'bg-[#5C3317] text-white font-bold shadow-xs'
+                  : 'bg-[#FAF6F0] hover:bg-[#EBD9C8] text-[#5E3D22] border border-[#D4B896]'
               }`}
             >
               {language === 'hi' ? st.hi : st.en}

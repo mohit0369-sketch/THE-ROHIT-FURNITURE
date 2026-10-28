@@ -33,20 +33,20 @@ export const OurWorkView: React.FC = () => {
   };
 
   return (
-    <div className="py-10 sm:py-16 bg-[#FDFBF7]">
+    <div className="py-10 sm:py-16 bg-[#F5EDE4]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         {/* Header */}
         <div className="text-left space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-[#8B4513] text-xs font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EBD9C8]/80 border border-[#D4B896] text-[#7D4A27] text-xs font-bold uppercase tracking-wider">
             <Hammer className="w-3.5 h-3.5" />
             <span>{language === 'hi' ? "वास्तविक कारीगरी का प्रमाण" : "Proof of Real Craftsmanship"}</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-stone-900 tracking-tight">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#2C1A0B] tracking-tight">
             {language === 'hi' ? "हमारा काम (Our Work) — पूरा किए गए प्रोजेक्ट्स" : "Our Work — Real Completed Projects"}
           </h1>
 
-          <p className="text-stone-600 text-sm sm:text-base max-w-3xl leading-relaxed">
+          <p className="text-[#5E3D22] text-sm sm:text-base max-w-3xl leading-relaxed">
             {language === 'hi'
               ? "ये हमारे वर्कशॉप द्वारा ग्राहकों के घरों और इमारतों के लिए बनाए गए वास्तविक प्रोजेक्ट्स हैं। हर प्रोजेक्ट में लकड़ी की प्रजाति, पॉलिश और निर्माण प्रक्रिया पारदर्शी रूप से दर्ज है।"
               : "A showcase of real residential and commercial projects built by our team in Mahendragarh. Each project documents the exact timbers used, construction notes, and finishing methods."}
@@ -54,8 +54,8 @@ export const OurWorkView: React.FC = () => {
 
           {/* Filter Pills */}
           <div className="flex flex-wrap items-center gap-2 pt-2">
-            <div className="flex items-center gap-1.5 text-xs font-bold text-stone-500 mr-2 uppercase tracking-wider">
-              <SlidersHorizontal className="w-3.5 h-3.5" />
+            <div className="flex items-center gap-1.5 text-xs font-bold text-[#7A5536] mr-2 uppercase tracking-wider">
+              <SlidersHorizontal className="w-3.5 h-3.5 text-[#7D4A27]" />
               <span>{language === 'hi' ? "फ़िल्टर:" : "Filter:"}</span>
             </div>
             {filterTabs.map((tab) => (
@@ -64,8 +64,8 @@ export const OurWorkView: React.FC = () => {
                 onClick={() => setActiveFilter(tab.id)}
                 className={`px-3.5 py-1.5 text-xs sm:text-sm font-semibold rounded-lg transition-colors ${
                   activeFilter === tab.id
-                    ? 'bg-[#8B4513] text-white shadow-xs'
-                    : 'bg-stone-100 hover:bg-stone-200 text-stone-700'
+                    ? 'bg-[#7D4A27] text-white shadow-xs border border-[#6E3F20]'
+                    : 'bg-[#FAF6F0] hover:bg-[#EBD9C8] text-[#422A14] border border-[#D4B896]'
                 }`}
               >
                 {language === 'hi' ? tab.hi : tab.en}
@@ -79,12 +79,12 @@ export const OurWorkView: React.FC = () => {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between text-left group"
+              className="bg-[#FAF6F0] rounded-2xl border border-[#D4B896] overflow-hidden shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between text-left group"
             >
               <div>
                 {/* Image */}
                 <div 
-                  className="relative aspect-16/10 bg-stone-100 overflow-hidden cursor-pointer"
+                  className="relative aspect-16/10 bg-[#EBD9C8]/40 overflow-hidden cursor-pointer"
                   onClick={() => setSelectedProject(project)}
                 >
                   <img
@@ -101,19 +101,19 @@ export const OurWorkView: React.FC = () => {
                 {/* Content */}
                 <div className="p-5 space-y-3">
                   <h3 
-                    className="font-bold text-stone-900 text-base sm:text-lg hover:text-[#8B4513] transition-colors cursor-pointer leading-snug"
+                    className="font-bold text-[#2C1A0B] text-base sm:text-lg hover:text-[#7D4A27] transition-colors cursor-pointer leading-snug"
                     onClick={() => setSelectedProject(project)}
                   >
                     {language === 'hi' ? project.title.hi : project.title.en}
                   </h3>
 
-                  <p className="text-stone-600 text-xs sm:text-sm leading-relaxed line-clamp-3">
+                  <p className="text-[#5E3D22] text-xs sm:text-sm leading-relaxed line-clamp-3">
                     {language === 'hi' ? project.description.hi : project.description.en}
                   </p>
 
                   {/* Materials breakdown */}
-                  <div className="bg-stone-50 p-3 rounded-xl border border-stone-100 space-y-1.5 text-xs">
-                    <span className="font-bold text-stone-900 block text-[11px] uppercase tracking-wider text-[#8B4513]">
+                  <div className="bg-[#F5EDE4] p-3 rounded-xl border border-[#D4B896]/60 space-y-1.5 text-xs">
+                    <span className="font-bold text-[#2C1A0B] block text-[11px] uppercase tracking-wider text-[#7D4A27]">
                       {language === 'hi' ? "उपयोग की गई सामग्री:" : "Materials Used:"}
                     </span>
                     {project.materials.wood && (
@@ -157,26 +157,26 @@ export const OurWorkView: React.FC = () => {
         {/* Project Detail Modal */}
         {selectedProject && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-xs">
-            <div className="relative w-full max-w-2xl bg-[#FDFBF7] rounded-2xl shadow-2xl border border-stone-200 overflow-hidden max-h-[90vh] flex flex-col">
-              <div className="flex items-center justify-between px-5 py-4 border-b border-stone-200 bg-white">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#8B4513]">
+            <div className="relative w-full max-w-2xl bg-[#FAF6F0] rounded-2xl shadow-2xl border border-[#D4B896] overflow-hidden max-h-[90vh] flex flex-col">
+              <div className="flex items-center justify-between px-5 py-4 border-b border-[#D4B896] bg-[#F5EDE4]">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#7D4A27]">
                   {selectedProject.category}
                 </span>
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="p-1.5 text-stone-400 hover:text-stone-700 rounded-full"
+                  className="p-1.5 text-[#7A5536] hover:text-[#2C1A0B] rounded-full"
                 >
                   <X className="w-5 h-5" />
                 </button>
               </div>
               <div className="p-5 sm:p-6 overflow-y-auto space-y-4 text-left">
-                <div className="aspect-16/10 rounded-xl overflow-hidden bg-stone-100 border border-stone-200">
+                <div className="aspect-16/10 rounded-xl overflow-hidden bg-[#EBD9C8]/40 border border-[#D4B896]">
                   <img src={selectedProject.image} alt={selectedProject.title.en} className="w-full h-full object-cover" />
                 </div>
-                <h3 className="text-xl font-bold text-stone-900">
+                <h3 className="text-xl font-bold text-[#2C1A0B]">
                   {language === 'hi' ? selectedProject.title.hi : selectedProject.title.en}
                 </h3>
-                <p className="text-stone-700 text-sm leading-relaxed">
+                <p className="text-[#422A14] text-sm leading-relaxed">
                   {language === 'hi' ? selectedProject.description.hi : selectedProject.description.en}
                 </p>
                 {selectedProject.dimensions && (

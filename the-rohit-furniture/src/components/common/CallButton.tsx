@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Phone } from 'lucide-react';
-import { CallChooser } from './CallChooser';
+import { motion } from 'framer-motion';
+import { useCall } from '../../context/CallContext';
 
 interface CallButtonProps {
   label?: string;
@@ -15,29 +16,30 @@ export const CallButton: React.FC<CallButtonProps> = ({
   fullWidth = false,
   className = ""
 }) => {
-  const baseClasses = "inline-flex items-center justify-center gap-2 font-medium rounded-lg transition-all duration-200 active:scale-95";
-  
+  const { openCallChooser } = useCall();
+
+  const baseClasses = "inline-flex items-center justify-center gap-2 font-medium rounded-lg cursor-pointer select-none";
+
   const variantStyles = {
-    primary: "bg-[#8B4513] hover:bg-[#72380F] text-white py-2.5 px-4 text-sm sm:text-base font-semibold shadow-sm",
-    outline: "bg-white hover:bg-stone-50 border border-stone-300 text-stone-800 py-2 px-3 text-sm shadow-xs",
-    compact: "bg-stone-800 text-white p-2 hover:bg-stone-900"
+    primary: "bg-[#7D4A27] hover:bg-[#5C3317] text-white py-2.5 px-4 text-sm sm:text-base font-semibold shadow-sm hover:shadow-md border border-[#6E3F20]",
+    outline: "bg-[#FAF6F0] hover:bg-[#EFE6DA] border border-[#C7AF96] text-[#422A14] py-2 px-3 text-sm shadow-xs hover:shadow-sm",
+    compact: "bg-[#5C3317] text-[#FAF6F0] p-2 hover:bg-[#3D210F]"
   }[variant];
 
   const widthClass = fullWidth ? "w-full" : "";
 
-  const [open, setOpen] = useState(false);
   return (
-    <>
-      <button
-        type="button"
-        onClick={() => setOpen(true)}
-        className={`${baseClasses} ${variantStyles} ${widthClass} ${className}`}
-        aria-label={label}
-      >
-        <Phone className="w-4 h-4 shrink-0" />
-        {variant !== 'compact' && <span>{label}</span>}
-      </button>
-      <CallChooser open={open} onClose={() => setOpen(false)} />
-    </>
+    <motion.button
+      type="button"
+      onClick={openCallChooser}
+      whileHover={{ scale: 1.04, y: -2 }}
+      whileTap={{ scale: 0.95 }}
+      transition={{ type: "spring", stiffness: 400, damping: 17 }}
+      className={`${baseClasses} ${variantStyles} ${widthClass} ${className}`}
+      aria-label={label}
+    >
+      <Phone className="w-4 h-4 shrink-0" />
+      {variant !== 'compact' && <span>{label}</span>}
+    </motion.button>
   );
 };

@@ -15,17 +15,17 @@ export const VisitShopSection: React.FC = () => {
   );
 
   return (
-    <section className="py-12 sm:py-16 bg-[#FDFBF7] border-b border-stone-200">
+    <section className="py-12 sm:py-16 bg-[#FAF6F0] border-b border-[#D4B896]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-left mb-8">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-300 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-2">
-            <Store className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EBD9C8]/80 border border-[#D4B896] text-[#5E3D22] text-xs font-bold uppercase tracking-wider mb-2">
+            <Store className="w-3.5 h-3.5 text-[#7D4A27]" />
             <span>{language === 'hi' ? "प्रत्यक्ष शोरूम व वर्कशॉप" : "Showroom & Workshop"}</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-stone-900">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#2C1A0B]">
             {t('headingVisitShop')}
           </h2>
-          <p className="text-stone-600 text-xs sm:text-sm mt-1 max-w-2xl">
+          <p className="text-[#5E3D22] text-xs sm:text-sm mt-1 max-w-2xl">
             {language === 'hi'
               ? "फर्नीचर ऑनलाइन देखने से ज्यादा महत्वपूर्ण उसे छूकर, लकड़ी की मोटाई और मजबूती देखना है। हमारी महेंद्रगढ़ दुकान पर आपका स्वागत है।"
               : "We encourage you to visit our workshop in person to touch the wood, check the joints, and speak directly with our craftsmen."}
@@ -34,14 +34,14 @@ export const VisitShopSection: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Contact Details Card */}
-          <div className="lg:col-span-6 bg-white rounded-2xl border border-stone-200 p-6 sm:p-8 space-y-6 text-left shadow-xs">
+          <div className="lg:col-span-6 bg-[#F5EDE4] rounded-2xl border border-[#D4B896] p-6 sm:p-8 space-y-6 text-left shadow-xs">
             {/* Address */}
             <div className="flex items-start gap-3.5">
-              <div className="p-2.5 rounded-xl bg-amber-50 text-[#8B4513] shrink-0 mt-0.5 border border-amber-200">
+              <div className="p-2.5 rounded-xl bg-[#EBD9C8] text-[#7D4A27] shrink-0 mt-0.5 border border-[#D4B896]">
                 <MapPin className="w-5 h-5" />
               </div>
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-stone-700 block">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#7A5536] block">
                   {language === 'hi' ? "दुकान व वर्कशॉप का पता:" : "Physical Shop & Workshop:"}
                 </span>
                 <p className="text-stone-900 font-semibold text-sm sm:text-base mt-1">
@@ -133,29 +133,29 @@ export const VisitShopSection: React.FC = () => {
 
 
           {/* Interactive Map / Direction Card */}
-          <div className="lg:col-span-6 bg-stone-100 rounded-2xl border border-stone-200 overflow-hidden shadow-xs text-left flex flex-col h-full min-h-[360px]">
-            <div className="p-4 bg-white border-b border-stone-200 flex items-center justify-between">
+          <div className="lg:col-span-6 bg-[#EBD9C8]/40 rounded-2xl border border-[#D4B896] overflow-hidden shadow-xs text-left flex flex-col h-full min-h-[360px]">
+            <div className="p-4 bg-[#FAF6F0] border-b border-[#D4B896] flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <Navigation className="w-4 h-4 text-[#8B4513]" />
-                <span className="font-bold text-stone-900 text-xs sm:text-sm">
+                <Navigation className="w-4 h-4 text-[#7D4A27]" />
+                <span className="font-bold text-[#2C1A0B] text-xs sm:text-sm">
                   {language === 'hi' ? "महेंद्रगढ़, हरियाणा में हमारी लोकेशन" : "Location in Mahendragarh, Haryana"}
                 </span>
               </div>
-              <span className="text-[11px] font-semibold text-stone-700 bg-stone-100 px-2 py-0.5 rounded border border-stone-200">
+              <span className="text-[11px] font-semibold text-[#5E3D22] bg-[#EBD9C8] px-2 py-0.5 rounded border border-[#D4B896]">
                 Google Maps
               </span>
             </div>
 
-            <div className="flex-1 relative flex items-center justify-center bg-stone-200/80 p-6 text-center">
+            <div className="flex-1 relative flex items-center justify-center bg-[#F5EDE4]/60 p-6 text-center">
               {/* Map Placeholder Canvas */}
               <div className="max-w-sm space-y-3">
-                <div className="w-12 h-12 rounded-full bg-[#8B4513] text-white flex items-center justify-center mx-auto shadow-md">
+                <div className="w-12 h-12 rounded-full bg-[#7D4A27] text-white flex items-center justify-center mx-auto shadow-md">
                   <MapPin className="w-6 h-6 animate-bounce" />
                 </div>
-                <h4 className="font-bold text-stone-900 text-base">
+                <h4 className="font-bold text-[#2C1A0B] text-base">
                   {BUSINESS_INFO.name[language]}
                 </h4>
-                <p className="text-stone-600 text-xs leading-relaxed">
+                <p className="text-[#5E3D22] text-xs leading-relaxed">
                   {language === 'hi'
                     ? "महेंद्रगढ़ शहर में मुख्य बाजार / वर्कशॉप रोड। गूगल मैप्स पर सही दिशा पाने के लिए नीचे बटन दबाएं।"
                     : "Located in Mahendragarh town. Tap below to navigate or ask for live WhatsApp location pin."}
@@ -164,7 +164,7 @@ export const VisitShopSection: React.FC = () => {
                   href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(BUSINESS_INFO.googleMaps.searchQuery)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-stone-900 hover:bg-stone-800 text-white rounded-lg text-xs font-semibold shadow-xs transition-colors"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#5C3317] hover:bg-[#3D210F] text-white rounded-lg text-xs font-semibold shadow-xs transition-colors"
                 >
                   <Navigation className="w-3.5 h-3.5" />
                   <span>{language === 'hi' ? "गूगल मैप पर देखें" : "Open in Google Maps"}</span>

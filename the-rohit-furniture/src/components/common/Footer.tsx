@@ -5,7 +5,7 @@ import { WhatsAppButton } from './WhatsAppButton';
 import { CallButton } from './CallButton';
 import { createWhatsAppUrl } from '../../utils/whatsapp';
 import type { NavTab } from './Header';
-import { Hammer, MapPin, Phone, Clock, ShieldCheck, Heart } from 'lucide-react';
+import { MapPin, Phone, Clock, ShieldCheck, Heart } from 'lucide-react';
 
 interface FooterProps {
   onSelectTab: (tab: NavTab) => void;
@@ -21,28 +21,37 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
   );
 
   return (
-    <footer className="bg-[#241A13] text-stone-300 pt-12 pb-24 md:pb-12 border-t border-stone-800 text-left">
+    <footer className="bg-[#1F1209] text-[#D4B896] pt-12 pb-24 md:pb-12 border-t border-[#422A14] text-left">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 pb-10 border-b border-stone-800">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 pb-10 border-b border-[#3D210F]">
           {/* Brand & Workshop Heritage */}
           <div className="lg:col-span-4 space-y-4">
-            <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-xl bg-[#A35824] text-white flex items-center justify-center">
-                <Hammer className="w-5 h-5" />
+            <div className="flex items-center gap-3">
+              <div className="w-11 h-11 rounded-xl overflow-hidden border border-[#5E3D22] bg-[#2C1A0B] flex items-center justify-center shadow-sm shrink-0">
+                <img
+                  src="/images/logo.png"
+                  alt="The Rohit Furniture Works"
+                  className="w-full h-full object-contain p-1"
+                />
               </div>
-              <span className="font-extrabold text-xl text-white tracking-tight">
-                {BUSINESS_INFO.name[language]}
-              </span>
+              <div>
+                <span className="font-extrabold text-xl text-white tracking-tight leading-none block">
+                  THE ROHIT
+                </span>
+                <span className="text-[11px] text-[#D4B896] font-bold tracking-wider uppercase block mt-0.5">
+                  FURNITURE WORKS
+                </span>
+              </div>
             </div>
 
-            <p className="text-stone-400 text-xs sm:text-sm leading-relaxed">
+            <p className="text-[#B8926A] text-xs sm:text-sm leading-relaxed">
               {language === 'hi'
                 ? "महेंद्रगढ़, हरियाणा में 15 वर्षों से हाथ से बना पक्की लकड़ी का फर्नीचर, मॉड्युलर किचन, मजबूत दरवाजे और खिड़कियाँ। प्रत्यक्ष दुकान व पूर्ण सामग्री पारदर्शिता।"
                 : "Handcrafted solid wood furniture, modular wooden kitchens, doors and windows with over 20 years of craftsmanship in Mahendragarh, Haryana. Physical workshop & complete material transparency."}
             </p>
 
-            <div className="flex items-center gap-2 text-xs text-amber-200 bg-stone-900/60 p-2.5 rounded-lg border border-stone-800">
-              <ShieldCheck className="w-4 h-4 text-[#A35824] shrink-0" />
+            <div className="flex items-center gap-2 text-xs text-[#EBD9C8] bg-[#2C1A0B]/80 p-2.5 rounded-lg border border-[#422A14]">
+              <ShieldCheck className="w-4 h-4 text-[#A0673C] shrink-0" />
               <span>
                 {language === 'hi' ? "सच्ची तस्वीरें व ईमानदार कारीगरी" : "Real Photographs & Honest Carpentry"}
               </span>
@@ -117,23 +126,23 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
             <h4 className="text-xs font-bold uppercase tracking-wider text-white">
               {language === 'hi' ? "दुकान का पता व समय" : "Showroom & Workshop"}
             </h4>
-            <div className="space-y-2.5 text-xs text-stone-400">
+            <div className="space-y-2.5 text-xs text-[#B8926A]">
               <div className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 text-[#A35824] shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-[#A0673C] shrink-0 mt-0.5" />
                 <span>{BUSINESS_INFO.address[language]}</span>
               </div>
               <div className="flex items-start gap-2">
-                <Clock className="w-4 h-4 text-stone-500 shrink-0 mt-0.5" />
+                <Clock className="w-4 h-4 text-[#9A7350] shrink-0 mt-0.5" />
                 <span>{BUSINESS_INFO.hours[language]}</span>
               </div>
               <div className="flex items-start gap-2">
-                <Phone className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                <Phone className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                 <span>{BUSINESS_INFO.phone.display}</span>
               </div>
             </div>
 
             <div className="pt-2 flex gap-2">
-              <CallButton variant="outline" className="text-xs py-1.5 px-3 bg-stone-900 text-stone-200 border-stone-700" />
+              <CallButton variant="outline" className="text-xs py-1.5 px-3 bg-[#2C1A0B] text-[#EBD9C8] border-[#5E3D22] hover:bg-[#422A14]" />
               <WhatsAppButton url={footerWhatsAppUrl} label="WhatsApp" variant="primary" className="text-xs py-1.5 px-3" />
             </div>
           </div>

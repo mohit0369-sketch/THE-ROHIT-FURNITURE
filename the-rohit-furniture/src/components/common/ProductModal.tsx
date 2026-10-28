@@ -32,17 +32,17 @@ export const ProductModal: React.FC<ProductModalProps> = ({
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-xs overflow-y-auto">
       <div 
-        className="relative w-full max-w-3xl bg-[#FDFBF7] rounded-2xl shadow-2xl border border-stone-200 overflow-hidden my-8 max-h-[90vh] flex flex-col"
+        className="relative w-full max-w-3xl bg-[#FAF6F0] rounded-2xl shadow-2xl border border-[#D4B896] overflow-hidden my-8 max-h-[90vh] flex flex-col"
         role="dialog"
         aria-modal="true"
         aria-labelledby="modal-title"
       >
         {/* Header bar */}
-        <div className="flex items-center justify-between px-5 py-4 border-b border-stone-200 bg-white sticky top-0 z-10">
+        <div className="flex items-center justify-between px-5 py-4 border-b border-[#D4B896] bg-[#F5EDE4] sticky top-0 z-10">
           <div className="flex items-center gap-2 min-w-0 pr-4">
             <StatusBadge status={product.status} size="sm" />
             {product.isHandmadeByUs && (
-              <span className="hidden sm:inline-flex items-center gap-1 text-xs font-semibold text-[#8B4513] bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200">
+              <span className="hidden sm:inline-flex items-center gap-1 text-xs font-semibold text-[#7D4A27] bg-[#EBD9C8]/70 px-2 py-0.5 rounded-full border border-[#D4B896]">
                 <Sparkles className="w-3 h-3" />
                 {language === 'hi' ? "हस्तनिर्मित" : "Workshop Handmade"}
               </span>
@@ -50,7 +50,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({
           </div>
           <button
             onClick={onClose}
-            className="p-2 text-stone-400 hover:text-stone-700 hover:bg-stone-100 rounded-full transition-colors"
+            className="p-2 text-[#7A5536] hover:text-[#2C1A0B] hover:bg-[#EBD9C8] rounded-full transition-colors"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
@@ -82,7 +82,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({
                     key={img.id}
                     onClick={() => setActiveImageIndex(idx)}
                     className={`w-16 h-16 rounded-lg overflow-hidden border-2 shrink-0 transition-all ${
-                      activeImageIndex === idx ? 'border-[#8B4513] ring-2 ring-[#8B4513]/20' : 'border-stone-200 opacity-70 hover:opacity-100'
+                      activeImageIndex === idx ? 'border-[#7D4A27] ring-2 ring-[#7D4A27]/20' : 'border-[#D4B896] opacity-70 hover:opacity-100'
                     }`}
                   >
                     <img src={img.url} alt={img.alt} className="w-full h-full object-cover" />
@@ -94,17 +94,17 @@ export const ProductModal: React.FC<ProductModalProps> = ({
 
           {/* Title & Pricing */}
           <div>
-            <h2 id="modal-title" className="text-xl sm:text-2xl font-bold text-stone-900 leading-tight">
+            <h2 id="modal-title" className="text-xl sm:text-2xl font-bold text-[#2C1A0B] leading-tight">
               {prodName}
             </h2>
             {priceText && (
-              <div className="mt-2 text-lg sm:text-xl font-bold text-[#8B4513]">
+              <div className="mt-2 text-lg sm:text-xl font-bold text-[#7D4A27]">
                 {priceText}
               </div>
             )}
             {product.dimensions && (
-              <div className="mt-1.5 text-xs sm:text-sm text-stone-600">
-                <span className="font-semibold text-stone-800">{t('specDimensions')}:</span> {product.dimensions}
+              <div className="mt-1.5 text-xs sm:text-sm text-[#5E3D22]">
+                <span className="font-semibold text-[#2C1A0B]">{t('specDimensions')}:</span> {product.dimensions}
               </div>
             )}
           </div>
@@ -125,8 +125,8 @@ export const ProductModal: React.FC<ProductModalProps> = ({
           )}
 
           {/* Description */}
-          <div className="text-stone-700 text-sm leading-relaxed whitespace-pre-line bg-white p-4 rounded-xl border border-stone-200">
-            <span className="font-bold block text-stone-900 mb-1">
+          <div className="text-[#422A14] text-sm leading-relaxed whitespace-pre-line bg-[#FAF6F0] p-4 rounded-xl border border-[#D4B896]">
+            <span className="font-bold block text-[#2C1A0B] mb-1">
               {language === 'hi' ? "विवरण व विशेषताएँ:" : "Description & Details:"}
             </span>
             {prodDesc}
@@ -142,8 +142,8 @@ export const ProductModal: React.FC<ProductModalProps> = ({
           />
 
           {/* Customization Note */}
-          <div className="flex items-center gap-2 text-xs sm:text-sm text-stone-700 bg-amber-50/60 p-3 rounded-lg border border-amber-200/60">
-            <CheckCircle2 className="w-4 h-4 text-[#8B4513] shrink-0" />
+          <div className="flex items-center gap-2 text-xs sm:text-sm text-[#5E3D22] bg-[#EBD9C8]/50 p-3 rounded-lg border border-[#D4B896]">
+            <CheckCircle2 className="w-4 h-4 text-[#7D4A27] shrink-0" />
             <span>
               {product.isCustomizable 
                 ? (language === 'hi' ? "कस्टमाइजेशन उपलब्ध: आप इसे अपने कमरे के नाप, अलग लकड़ी (शीशम/सागवान) और मनपसंद फिनिश में बनवा सकते हैं।" : "Customization Available: You can order this piece tailored to your room dimensions, wood preference, and finish.")
@@ -153,7 +153,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({
         </div>
 
         {/* Action Buttons Footer */}
-        <div className="px-5 py-4 border-t border-stone-200 bg-white flex flex-col sm:flex-row items-stretch sm:items-center justify-end gap-3">
+        <div className="px-5 py-4 border-t border-[#D4B896] bg-[#F5EDE4] flex flex-col sm:flex-row items-stretch sm:items-center justify-end gap-3">
           <CallButton label={t('ctaCall')} className="sm:w-auto" />
           <WhatsAppButton
             url={whatsappUrl}

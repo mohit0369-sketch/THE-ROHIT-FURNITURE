@@ -42,12 +42,12 @@ export const KitchensView: React.FC<KitchensViewProps> = ({ products, onViewDeta
   ];
 
   return (
-    <div className="py-10 sm:py-16 bg-[#FDFBF7]">
+    <div className="py-10 sm:py-16 bg-[#F5EDE4]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Banner Section */}
-        <div className="bg-[#241A13] text-white rounded-3xl p-6 sm:p-10 lg:p-12 relative overflow-hidden text-left">
+        <div className="bg-[#1F1209] text-white rounded-3xl p-6 sm:p-10 lg:p-12 relative overflow-hidden text-left border border-[#422A14] shadow-md">
           <div className="relative z-10 max-w-2xl space-y-4">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#A35824] text-white text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#7D4A27] text-white text-xs font-bold uppercase tracking-wider">
               <ChefHat className="w-3.5 h-3.5" />
               <span>{language === 'hi' ? "विशेषज्ञता: लकड़ी की किचन" : "Specialty: Wooden Kitchens"}</span>
             </div>
@@ -58,7 +58,7 @@ export const KitchensView: React.FC<KitchensViewProps> = ({ products, onViewDeta
                 : "Handcrafted Solid Wood & Marine Ply Modular Kitchens"}
             </h1>
 
-            <p className="text-stone-300 text-sm sm:text-base leading-relaxed">
+            <p className="text-[#D4B896] text-sm sm:text-base leading-relaxed">
               {language === 'hi'
                 ? "हम किसी भी आकार की किचन (L-शेप, U-शेप, पैरेलल) आपके कमरे के नाप अनुसार बनाते हैं। भीतर 100% वाटरप्रूफ BWP 710 प्लाईवुड और बाहर ठोस लकड़ी के सुंदर पल्ले।"
                 : "Tailored to your exact home layout in Mahendragarh. We use genuine BWP 710 Boiling Water Proof ply carcasses with solid timber shutters and heavy-duty fittings built to endure Indian cooking."}
@@ -89,14 +89,14 @@ export const KitchensView: React.FC<KitchensViewProps> = ({ products, onViewDeta
           {kitchenBenefits.map((b, idx) => {
             const Icon = b.icon;
             return (
-              <div key={idx} className="bg-white p-5 rounded-xl border border-stone-200 text-left shadow-xs space-y-2">
-                <div className="p-2.5 rounded-lg bg-amber-50 text-[#8B4513] border border-amber-200 w-fit">
+              <div key={idx} className="bg-[#FAF6F0] p-5 rounded-xl border border-[#D4B896] text-left shadow-xs space-y-2">
+                <div className="p-2.5 rounded-lg bg-[#EBD9C8] text-[#7D4A27] border border-[#D4B896] w-fit">
                   <Icon className="w-5 h-5" />
                 </div>
-                <h4 className="font-bold text-stone-900 text-sm sm:text-base">
+                <h4 className="font-bold text-[#2C1A0B] text-sm sm:text-base">
                   {language === 'hi' ? b.title.hi : b.title.en}
                 </h4>
-                <p className="text-stone-600 text-xs sm:text-sm leading-relaxed">
+                <p className="text-[#5E3D22] text-xs sm:text-sm leading-relaxed">
                   {language === 'hi' ? b.desc.hi : b.desc.en}
                 </p>
               </div>
@@ -107,7 +107,7 @@ export const KitchensView: React.FC<KitchensViewProps> = ({ products, onViewDeta
         {/* Kitchen Projects Grid */}
         <div>
           <div className="text-left mb-6">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-stone-900">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#2C1A0B]">
               {language === 'hi' ? "किचन प्रोजेक्ट्स व डिज़ाइन" : "Kitchen Designs & Configurations"}
             </h2>
             <p className="text-stone-600 text-xs sm:text-sm mt-1">

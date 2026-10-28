@@ -88,14 +88,14 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
   }, [products, selectedCategory, selectedSubcategory, selectedStatus, searchQuery]);
 
   return (
-    <div className="py-10 sm:py-16 bg-[#FDFBF7]">
+    <div className="py-10 sm:py-16 bg-[#F5EDE4]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         {/* Header */}
         <div className="text-left">
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-stone-900 tracking-tight">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#2C1A0B] tracking-tight">
             {title || (language === 'hi' ? "हमारा संपूर्ण फर्नीचर संग्रह" : "Handcrafted Woodwork Collection")}
           </h1>
-          <p className="text-stone-600 text-xs sm:text-sm mt-1 max-w-3xl">
+          <p className="text-[#5E3D22] text-xs sm:text-sm mt-1 max-w-3xl">
             {subtitle || (language === 'hi' 
               ? "दुकान में तुरंत उपलब्ध फर्नीचर, ऑर्डर पर तैयार होने वाले मॉडल और विशेष कस्टम काम देखें।" 
               : "Explore furniture currently in our Mahendragarh showroom, made-to-order designs, and bespoke pieces.")}
@@ -117,15 +117,15 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
         />
 
         {/* Results Counter & Real Photos Badge */}
-        <div className="flex items-center justify-between text-xs text-stone-600 border-b border-stone-200 pb-3">
+        <div className="flex items-center justify-between text-xs text-[#5E3D22] border-b border-[#D4B896] pb-3">
           <span>
             {language === 'hi' ? "दिखाए गए उत्पाद: " : "Showing "}
-            <strong className="text-stone-900 font-bold">{filteredProducts.length}</strong>
+            <strong className="text-[#2C1A0B] font-bold">{filteredProducts.length}</strong>
             {language === 'hi' ? " आइटम" : " items"}
           </span>
 
-          <span className="hidden sm:inline-flex items-center gap-1 text-[11px] text-stone-500">
-            <Sparkles className="w-3.5 h-3.5 text-[#8B4513]" />
+          <span className="hidden sm:inline-flex items-center gap-1 text-[11px] text-[#7A5536]">
+            <Sparkles className="w-3.5 h-3.5 text-[#7D4A27]" />
             <span>{language === 'hi' ? "सभी विवरण पारदर्शी हैं" : "Fully transparent materials"}</span>
           </span>
         </div>
@@ -142,21 +142,21 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
             ))}
           </div>
         ) : (
-          <div className="bg-white rounded-2xl border border-stone-200 p-12 text-center max-w-md mx-auto space-y-3">
-            <div className="w-12 h-12 rounded-full bg-stone-100 text-stone-400 flex items-center justify-center mx-auto">
+          <div className="bg-[#FAF6F0] rounded-2xl border border-[#D4B896] p-12 text-center max-w-md mx-auto space-y-3">
+            <div className="w-12 h-12 rounded-full bg-[#EBD9C8] text-[#7A5536] flex items-center justify-center mx-auto">
               <PackageOpen className="w-6 h-6" />
             </div>
-            <h3 className="font-bold text-stone-900 text-base">
+            <h3 className="font-bold text-[#2C1A0B] text-base">
               {language === 'hi' ? "कोई उत्पाद नहीं मिला" : "No products found"}
             </h3>
-            <p className="text-xs text-stone-600">
+            <p className="text-xs text-[#5E3D22]">
               {language === 'hi'
                 ? "आपके चुने गए फ़िल्टर या खोज के अनुसार कोई फर्नीचर नहीं मिला। कृपया फ़िल्टर बदलें।"
                 : "No items match your active filters or search terms. Try clearing filters to see all work."}
             </p>
             <button
               onClick={handleClearFilters}
-              className="px-4 py-2 text-xs font-semibold bg-[#8B4513] text-white rounded-lg hover:bg-[#72380F] transition-colors"
+              className="px-4 py-2 text-xs font-semibold bg-[#7D4A27] text-white rounded-lg hover:bg-[#5C3317] transition-colors"
             >
               {language === 'hi' ? "फ़िल्टर हटाएं" : "Clear All Filters"}
             </button>

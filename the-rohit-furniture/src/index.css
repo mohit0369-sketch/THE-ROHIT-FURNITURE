@@ -4,12 +4,23 @@
   :root {
     --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-devanagari: 'Noto Sans Devanagari', 'Plus Jakarta Sans', system-ui, sans-serif;
+    --leather-50: #F5EDE4;
+    --leather-100: #EBD9C8;
+    --leather-200: #D4B896;
+    --leather-300: #B8926A;
+    --leather-400: #9A7350;
+    --leather-500: #7A5536;
+    --leather-600: #5E3D22;
+    --leather-700: #422A14;
+    --leather-800: #2C1A0B;
+    --leather-900: #1A0F06;
+    --leather-accent: #A0673C;
   }
 
   body {
     font-family: var(--font-sans);
-    background-color: #FDFBF7;
-    color: #1F1D1A;
+    background-color: var(--leather-50);
+    color: #2C1A0B;
     min-height: 100vh;
     overflow-x: hidden;
   }
@@ -25,14 +36,13 @@
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #F4EFEA;
+  background: var(--leather-100);
 }
 ::-webkit-scrollbar-thumb {
-  background: #D4A373;
+  background: var(--leather-accent);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #A35824;
+  background: var(--leather-500);
 }
-
 
